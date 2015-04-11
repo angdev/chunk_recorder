@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/<%= pkg.name %>.js': ['lib/**/*.js'],
+          'dist/<%= pkg.name %>.js': ['lib/chunk_recorder.js'],
         },
         options: {
           banner: '<%= banner %>',
