@@ -1,11 +1,40 @@
 {
   "name": "chunk_recorder",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/FeGs/chunk_recorder",
+  "author": {
+    "name": "Hong ChulJu",
+    "email": "ang0123dev@gmail.com",
+    "url": "http://blog.fegs.kr"
   },
-  "author": "angdev",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FeGs/chunk_recorder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FeGs/chunk_recorder/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/FeGs/chunk_recorder/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/chunk_recorder",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browserify": "^3.6.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.0"
+  },
+  "keywords": []
 }
