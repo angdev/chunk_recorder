@@ -1,15 +1,8 @@
 # chunk_recorder
 
-The best project ever.
+Record chunked audio (Recorder interface: [Recorderjs](https://github.com/mattdiamond/Recorderjs))
 
 ## Getting Started
-### On the server
-Install the module with: `npm install chunk_recorder`
-
-```javascript
-var chunk_recorder = require('chunk_recorder');
-chunk_recorder.awesome(); // "awesome"
-```
 
 ### In the browser
 Download the [production version][min] or the [development version][max].
@@ -22,19 +15,18 @@ In your web page:
 ```html
 <script src="dist/chunk_recorder.min.js"></script>
 <script>
-awesome(); // "awesome"
-</script>
-```
-
-In your code, you can attach chunk_recorder's methods to any object.
-
-```html
-<script>
-var exports = Bocoup.utils;
-</script>
-<script src="dist/chunk_recorder.min.js"></script>
-<script>
-Bocoup.utils.awesome(); // "awesome"
+// Recorder class from Recorderjs.
+var input = audio_context.createMediaStreamSource(stream);
+var chunk_recorder = new ChunkRecorder(function () {
+  return new Recorder(input);
+}, {
+  chunk_interval: 10000, // Interval of each chunk is 10 seconds.
+  encoding_method: function (recorder, callback) {
+    recorder.exportWAV(function (blob) {
+      callback(null, blob);
+    });
+  }
+});
 </script>
 ```
 
@@ -53,5 +45,5 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2015 Hong ChulJu  
+Copyright (c) 2015 Hong ChulJu
 Licensed under the MIT license.
